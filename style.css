@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+@media screen and (min-width:800px) {
+    body{
+        font-size: large;
+    }
+    .container{
+        display: flex;
+    }
+}
+.sidebar{
+    background-image: url(./assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 7em ;
+    position: relative;
+    overflow: hidden;
+    flex:1;
+    z-index: -1;
+}
+.btn{
+background-color:transparent;
+padding: .5rem;
+width: 34px;
+border-radius: 50%;
+border: 1px solid white ;
+color: #ffffff;
+margin: .75em .5rem;
+}
+.active-btn{
+color:  hsl(213, 96%, 18%) ;
+background-color:hsl(206, 94%, 87%);
+}
+.steps{
+display: none;
+}
+@media screen and (min-width:800px) {
+    .sidebar{
+        background-image: url(./assets/images/bg-sidebar-desktop.svg);
+        background-size: auto 100%;
+        height: 100vh;
+        display: block;
+        overflow: hidden;
+        padding-bottom: 0;
+    }
+    .steps{
+        display:block;
+        color: white;
+    }
+    .btn-container{
+        display: flex;
+        align-items: center;
+        padding: 1.5em 1em;
+    }
+}
+.general-forms{
+    flex: 1;
+}
+.form{
+    margin: -15% auto 0;
+    background-color: #ffffff;
+    border-radius: .75em;
+    width: 80%;
+    padding: 1em;
+    background-color: white;
+    display: none;
+}
+.active{
+    display: block;
+}
+.form h1{
+    margin-bottom: .5em;    
+}
+.inputs{
+    margin-top: 0.5em;
+}
+.inputs input{
+    padding: .75em ;
+    margin: .75em 0;
+    border-radius: .75em;
+    width: 100%;
+    border: 1px solid hsl(231, 11%, 63%);
+    font-size: large;
+}
+.inputs input:hover{
+    background-color:hsl(231, 100%, 99%);
+    border: 1px solid  hsl(213, 96%, 18%);
+ 
+}
+.form p{
+    color: hsl(231, 11%, 63%);
+}
+.form h1, .form h5{
+    color: hsl(213, 96%, 18%);
+}
+@media screen and (min-width: 800px) {
+    .general-forms{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .form{
+        width: 70%;
+        margin: 2em 0;
+    }
+}
+@media screen and (min-width:820px) and (max-width: 1300px ) {
+    .form{
+        margin: 1em auto;
+        width: 90%;
+    }
+}
+/* form 2 */
+.form2{
+    padding: 1em;
+}
+.plan{
+    width: 100%;
+    border: 1px solid hsl(231, 11%, 90%);
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    padding: 2rem ;
+    margin: .5em 0;
+    text-align: left;
+    border-radius: .75em;
+}
+.plan:hover{
+    background-color:hsl(231, 100%, 99%);
+    border: 1px solid  hsl(213, 96%, 18%);
+}
+.plan-active{
+    background-color:hsl(231, 100%, 99%);
+    border: 1px solid  hsl(213, 96%, 18%);
+}
+.price{
+    margin-left: .75em;
+    padding-right: 0.5em;
+}
+button h4{
+    margin-bottom: 0.5em;
+}
+.pl{
+    display: none;
+}
+.pl-active{
+    display: block;
+    margin-top: 0.5em;
+    color:hsl(243, 100%, 62%)
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.plan input{
+    height: 100%;
+    margin: 0;
+    margin-left: -2.5em;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    transition: 1s;
+}
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .5s;
+}
+input:checked + .slider{
+    background-color:  hsl(213, 96%, 18%);
+}
+input:checked + .slider::before{
+    transform: translateX(26px);
+}
+.slider.round{
+    border-radius: 34px;
+}
+.slider.round::before{
+    border-radius: 50%;
+}
+.toggle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    padding: .5em 0;
+    border: 1px solid transparent ;
+    border-radius: .75em;
+    background-color: hsl(231, 11%, 98%);
+}
+.toggle p{
+    margin: 0 1.5em;
+}
+.toggle-active{
+    color: hsl(213, 96%, 18%) ;
+}
+@media screen and (min-width:800px){
+    .price{
+        margin-left: 0;
+    }
+    .main-plan{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;   
+    }
+    .plan{
+        display: block;
+        width: 130px;
+        margin: 1.5em 10px;
+    }
+    .plan img{
+        margin: 1em 0;
+    }
+}
+/* form 3 */
+.add-on{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5em 0 1em;
+    padding: 1em;
+    border-radius: .75em;
+}
+.add-on:hover{
+    background-color:hsl(231, 100%, 99%);
+    border: 1px solid  hsl(213, 96%, 18%);
+}
+.add-on-active{
+    background-color:hsl(231, 100%, 99%);
+    border: 1px solid  hsl(213, 96%, 18%);
+}
+.add-on input{
+    width:20px;
+    height:20px;
+    margin-right: 2em;
+}
+.p{
+    color:hsl(243, 100%, 62%) !important ;
+    font-size: medium;
+    margin: 0 .5em;
+}
+
+@media screen and (min-width: 800px) {
+    .add-on input{
+        margin-right: 0;
+    }
+    .p{
+        margin: 0;
+    }
+}
+/* form 4 */
+.form4 p{
+    padding-right: 1em;
+}
+.sm{
+    color: hsl(213, 96%, 18%) !important;
+}
+.sum{
+    padding: 1em 0;
+    background-color: hsl(231, 11%, 96%);
+    border-radius: .75em;
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
+hr{
+  border: 1px solid  hsl(231, 11%, 90%);
+  margin: 0 2em;
+}
+.specifics{
+    margin: 1em 0;
+}
+.specifics h4{
+    text-transform: capitalize;
+}
+@media screen and (max-width:800px) {
+    .specifics{display: flex;}
+}
+.specific{
+    margin: 0 1em;
+}
+.specifics , .total{
+    display: flex;
+    justify-content: space-between;
+}
+.total{
+    margin: 1em 0;
+}
+/* final message (form 5) */
+.form5{
+    text-align: center;
+    padding: 3em 1.5em;
+}
+.form5 img{
+    margin-bottom: 1.5em ;
+
+}
+/* footer */
+.footer{
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer p{
+    color: hsl(231, 11%, 63%);
+    text-decoration: underline;
+}
+.footer button{
+    cursor: pointer;
+}
+.prev-btn{
+    background-color: transparent;
+    border: none;
+}
+.submit , .next-btn,.first-btn{
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    padding: 0.5em;
+    border-radius: .3em;
+    border: none;
+}
+
